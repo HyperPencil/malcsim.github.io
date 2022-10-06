@@ -14,6 +14,7 @@
         body {
             transition: 0.5s;
             font-family: Fredoka;
+            overflow-x: hidden;
         }
         nav {
             transition: 0.5s;
@@ -31,13 +32,12 @@
             color:white;
         }
         .grey {
-            background-color: darkgray; 
+            background-color: rgb(145, 145, 145); 
             color:black;
         }
 
         .jumbotron {
-            background: url("images/bg.jpg") no-repeat center center;
-            background-size: cover;
+            background: url("images/Face2.png") center;
             height: 200px;
             display: flex;
             align-items: center;
@@ -46,7 +46,8 @@
 
         .card {
             width: auto;
-            height: 450px;
+            background-color: rgb(0, 0, 0); 
+            height:auto;
         }
 
         .row {
@@ -104,8 +105,28 @@
         }
 
         .caption {
-    display: block;
-}
+          display: block;
+        }
+
+        .player {
+          background: url("images/Face2.png") center;
+          padding-top: 50px;
+        }
+
+        .cardbanner {
+          background: url("images/pepe.jpg") center;
+          height:fit-content;
+          padding-top: 400px;
+          padding-bottom: 50px;
+        }
+
+        .caro {
+          background: url("images/heart.png") top;
+        }
+
+        .caro2 {
+          background: url("images/heart2.png") top;
+        }
 
     </style>
 </head>
@@ -164,7 +185,7 @@
       <div class="container">
         <h1 style="text-align: center;">Welcome to snippets of my life!</h1>
         <br>
-        <p style="text-align: center;">Hehe (Jumbotron)</p>
+        <p style="text-align: center;">Hehe you can try out the theme toggler on the top right of the page!</p>
       </div>
     </div>
 
@@ -172,7 +193,7 @@
     <div class="container-fluid box1" id="profile">
       <!-- note: img is in-line level element -->
       <div class="row">
-        <div class=" container-fluid col-md col-4" style="padding-bottom:20px; padding-left:100px;">
+        <div class=" container-fluid col-md col-4" style="padding-bottom:20px; padding-left:300px; padding-top:20px;">
           <img src="images/me.jpg" onmouseover ="altImg(this)" onmouseout="normalImg(this)"  class="img-fluid" height="auto" width="400px">
           <span class="caption">Mouse over for young me!</span>
           </div>
@@ -189,7 +210,8 @@
     </div>
 
     <!-- Add the carousel -->
-    <div class="mx-auto box" id="wally" style="margin-top:50px;"><!-- put the carousel in a box and center it --> 
+    <div class="caro" id="carousel-main">
+    <div class="mx-auto box" id="wally"><!-- put the carousel in a box and center it --> 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -226,9 +248,10 @@
         </button>
     </div>
     </div>
+  </div>
 
     <!-- GIF Gallery -->
-    <div class="container box1" style="padding:50px; margin-top:50px;"" id="gif">
+    <div class="container box1" style="padding:50px;" id="gif">
       
       <div class="container"> 
         <h3 style="text-align:center;">Live Gallery</h3>
@@ -241,7 +264,7 @@
               </div> 
               <div class="col-sm-4 "> 
                 <img src="images/transform.gif" class="img-fluid" height="auto" width="400px">
-                <p style="text-align:center;">Me during the school term</p>
+                <p style="text-align:center;">Me during the school term (gif)</p>
               </div> 
               <div class="col-sm-4 "> 
                 <video autoplay="autoplay" loop="true" muted width="400" height="400">
@@ -250,15 +273,31 @@
                 </video>
               </div> 
           </div> 
+
+          <div class="row"> 
+            <div class="col-sm-6 "> 
+              <video autoplay="autoplay" controls loop="true" muted width="600" height="400">
+                <source src="images/vid2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video>
+            </div> 
+            
+            <div class="col-sm-6 "> 
+              <video autoplay="autoplay" controls loop="true" muted width="600" height="400">
+                <source src="images/vid1.mp4" type="video/mp4" >
+              Your browser does not support the video tag.
+              </video>
+            </div> 
+        </div> 
       </div>
     </div>    
     
     <!-- Cards for Projects -->
-    <div class="row" style="padding:50px;" id="cards" >
+    <div class="row green cardbanner" id="cards" >
       <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
-              <img src="http://img.youtube.com/vi/9svoYF-r3Lc/0.jpg" class="d-block w-100 h-50" alt="...">
+              <img src="http://img.youtube.com/vi/9svoYF-r3Lc/0.jpg" class="img-fluid d-block" alt="...">
             <h5 class="card-title">Shipwreck</h5>
             <p class="card-text">VR Project during my time NYP</p>
             <a class="btn btn-primary" href="https://www.youtube.com/watch?v=9svoYF-r3Lc" role="button">Link</a>
@@ -268,7 +307,7 @@
       <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
-              <img src="http://img.youtube.com/vi/0Cd7gxe2baY/0.jpg" class="d-block w-100 h-50" alt="...">
+              <img src="http://img.youtube.com/vi/0Cd7gxe2baY/0.jpg" class="img-fluid d-block" alt="...">
             <h5 class="card-title">The Key</h5>
             <p class="card-text">3D Project I did while on an internship in France</p>
             <a class="btn btn-primary" href="https://www.youtube.com/watch?v=0Cd7gxe2baY" role="button">Link</a>
@@ -279,7 +318,7 @@
       <div class="col-sm-3">
           <div class="card">
             <div class="card-body">
-              <img src="http://img.youtube.com/vi/fxla2sj6D6s/0.jpg" class="d-block w-100 h-50" alt="...">
+              <img src="http://img.youtube.com/vi/fxla2sj6D6s/0.jpg" class="img-fluid d-block" alt="...">
               <h5 class="card-title">Mikro</h5>
               <p class="card-text">Top 10 Ellipsis Tech Series 2021 Hackathon Project</p>
               <a class="btn btn-primary" href="https://www.youtube.com/watch?v=fxla2sj6D6s" role="button">Link</a>
@@ -291,10 +330,10 @@
         <div class="col-sm-3">
           <div class="card">
             <div class="card-body">
-              <img src="http://img.youtube.com/vi/fxla2sj6D6s/0.jpg" class="d-block w-100 h-50" alt="...">
-              <h5 class="card-title">Modal Test</h5>
+              <img src="http://img.youtube.com/vi/fxla2sj6D6s/0.jpg" class="img-fluid d-block" alt="...">
+              <h5 class="card-title">Modal Test (Thumbnails taken from Youtube Hyperlink)</h5>
               <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">
-                Modal Test!
+                Modal Test! 
               </button>
             </div>
           </div>
@@ -321,7 +360,7 @@
   </div>
   
     <!-- Video Player-->
-    <div style="text-align:center; padding-bottom:50px;">
+    <div class="player" style="text-align:center; padding-bottom:50px;">
       <iframe width="800" height="450"
 src="https://www.youtube.com/embed/_caMQpiwiaU">
 
@@ -336,6 +375,8 @@ src="https://www.youtube.com/embed/_caMQpiwiaU">
         var box1 = document.getElementById("profile");
         var jumbo = document.getElementById("jumbotron");
         var gallery = document.getElementById("gif");
+        var cards = document.getElementById("cards");
+        var carousel = document.getElementById("carousel-main");
         if (checkbox.checked == true)
         {
             document.body.classList.add("dark");
@@ -348,6 +389,10 @@ src="https://www.youtube.com/embed/_caMQpiwiaU">
             jumbo.classList.remove("box1");
             gallery.classList.add("box1alt");
             gallery.classList.remove("box1");
+            cards.classList.add("black");
+            cards.classList.remove("green");
+            carousel.classList.add("caro2");
+            carousel.classList.remove("caro");
             gg.src="images/bulboff.png";
 
         }
@@ -362,6 +407,12 @@ src="https://www.youtube.com/embed/_caMQpiwiaU">
             box1.classList.remove("box1alt");
             jumbo.classList.add("box1");
             jumbo.classList.remove("box1alt");
+            gallery.classList.add("box1");
+            gallery.classList.remove("box1alt");
+            cards.classList.add("green");
+            cards.classList.remove("black");
+            carousel.classList.add("caro");
+            carousel.classList.remove("caro2");
             gg.src="images/bulbon.png";
 
 
